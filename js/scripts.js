@@ -2,14 +2,25 @@
 
 // FRONT END
 $(function() {
-  var age = parseInt(prompt("How old are you?"));
-  if(age < 18) {
-    $(".under-18").show();
-  }
-  else if(age > 18) {
-    $(".over-18").show();
-  }
-  else {
-    alert("THAT INPUT WAS NOT A NUMBER!");
-  }
+  $(".buttonClass").click(function(){
+    var answer = prompt("Do you want to learn about deer, snake, turtle??");
+    if(answer === "deer" || answer === "Deer" || answer === "DEER"){
+      $(".snake-hidden").hide();
+      $(".turtle-hidden").hide();
+      $(".deer-hidden").show();
+    }
+    else if(answer === "snake" || answer === "Snake" || answer === "SNAKE") {
+      $(".snake-hidden").show();
+      $(".turtle-hidden").hide();
+      $(".deer-hidden").hide();
+    }
+    else if(answer === "turtle" || answer === "Turtle" || answer === "TURTLE") {
+      $(".snake-hidden").hide();
+      $(".turtle-hidden").show();
+      $(".deer-hidden").hide();
+    }
+    else {
+      alert("You are horrible at following directions!")
+    }
+  });
 });
